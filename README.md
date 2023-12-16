@@ -1,0 +1,2 @@
+# fullscratch_transfomer
+Pytorchを使ってtransfomerを自作する
