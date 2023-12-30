@@ -1,0 +1,28 @@
+version: '3.2'
+services:
+  app:
+    build: .
+    # dockerfile: Dockerfile
+    container_name: 'FullScratch_Transfomer'
+    # devices:
+    #   - /dev/nvidia0
+    working_dir: '/workspace'
+    volumes:
+      - ./:/workspace/
+      # - ./lib:/lib
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    ports:
+      - "8888:8080"
+    tty: true
+    networks:
+      - db_network
+
+networks:
+  db_network:
+    external: true
