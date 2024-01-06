@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.9'
 services:
   app:
     build: .
@@ -9,16 +9,9 @@ services:
     working_dir: '/workspace'
     volumes:
       - ./:/workspace/
-      # - ./lib:/lib
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: 1
-    #           capabilities: [gpu]
     ports:
-      - "8888:8080"
+      - 8888:8888
+
     tty: true
     networks:
       - db_network
